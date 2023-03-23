@@ -3,6 +3,7 @@ function calcularCadena(texto){
     {
         return 0;
     }
+    return parseInt(texto);
     
 }
 export default calcularCadena;
