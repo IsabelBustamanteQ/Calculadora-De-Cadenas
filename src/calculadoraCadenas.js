@@ -3,8 +3,8 @@ function calcularCadena(texto){
     {
         return 0;
     }
-    texto=texto.replace('-',',');
-    let numeros=texto.split(",");
+    texto=texto.replaceAll('-',',');
+    let numeros=texto.split([","]);
     let sumador=0;
     for(var i=0;i<numeros.length;i++)
     {

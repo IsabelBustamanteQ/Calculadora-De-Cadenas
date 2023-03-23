@@ -15,5 +15,8 @@ describe("Calculadora de Cadenas", () => {
     });
     it("sumar 2 numeros separados por guion",()=>{
         expect(calcularCadena("1-2")).toEqual(3);
+    });
+    it("sumar varios numeros separados por coma y guion",()=>{
+        expect(calcularCadena("1,2,1-2-3")).toEqual(9);
     })
   });
