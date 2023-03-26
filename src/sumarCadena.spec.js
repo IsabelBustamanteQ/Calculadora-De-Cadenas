@@ -21,6 +21,9 @@ describe("Calculadora de Cadenas", () => {
     });
     it("sumar varios numeros con delimitador especificado", ()=>{
         expect(sumar("//[;] 6;7;4")).toEqual(17);
+    });
+    it("ignorar numeros mayores a 1000",()=>{
+        expect(sumar("2, 1001")).toEqual(2);
     })
 
   });

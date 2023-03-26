@@ -10,11 +10,15 @@ function sumar(cadenaDeNumeros){
         cadenaDeNumeros=cadenaSinDefinicionDeDelimitador.replaceAll(delimitador,",");
     }
     cadenaDeNumeros=cadenaDeNumeros.replaceAll('-',',');
-    let numeros=cadenaDeNumeros.split([","]);
+    let ListaDeNumeros=cadenaDeNumeros.split([","]);
     let total_suma=0;
-    for(var i=0;i<numeros.length;i++)
+    for(var i=0;i<ListaDeNumeros.length;i++)
     {
-        total_suma=total_suma+parseInt(numeros[i]);
+        var numeroASumar=parseInt(ListaDeNumeros[i]);
+        if(numeroASumar<=1000)
+        {
+            total_suma=total_suma+numeroASumar;
+        }
     }
     return total_suma;
 }
