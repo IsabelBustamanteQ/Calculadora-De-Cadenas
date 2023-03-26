@@ -24,6 +24,12 @@ describe("Calculadora de Cadenas", () => {
     });
     it("ignorar numeros mayores a 1000",()=>{
         expect(sumar("2, 1001")).toEqual(2);
-    })
+    });
+    it("usar un delimitador de varios caracteres",()=>{
+        expect(sumar("//[***] 1***2***3")).toEqual(6);
+    });
+    it("usar varios delimitadores definidos por usuario",()=>{
+        expect(sumar("//[*][%][+] 1*2%3+7-9")).toEqual(22);
+    });
 
   });

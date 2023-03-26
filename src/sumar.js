@@ -5,9 +5,14 @@ function sumar(cadenaDeNumeros){
     }
     if(cadenaDeNumeros.includes("//["))
     {
-        var delimitador=cadenaDeNumeros.charAt(3);
-        var cadenaSinDefinicionDeDelimitador=cadenaDeNumeros.slice(5);
-        cadenaDeNumeros=cadenaSinDefinicionDeDelimitador.replaceAll(delimitador,",");
+        var definicionDeDelimitadores=cadenaDeNumeros.slice(cadenaDeNumeros.indexOf("[")+1,cadenaDeNumeros.lastIndexOf("]"));
+        let delimitadores=definicionDeDelimitadores.split("][");
+        var cadenaDeNumeros=cadenaDeNumeros.slice(cadenaDeNumeros.indexOf("] ")+2);
+        for(var i=0;i<delimitadores.length;i++)
+        {
+            console.log(delimitadores[i]);
+            cadenaDeNumeros=cadenaDeNumeros.replaceAll(delimitadores[i],",");
+        }
     }
     cadenaDeNumeros=cadenaDeNumeros.replaceAll('-',',');
     let ListaDeNumeros=cadenaDeNumeros.split([","]);
